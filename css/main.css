@@ -18,7 +18,7 @@ body {
 .login_container > .img {
     width: 240px; height : 240px;
     border-radius: 50%;
-    background: url(images/Juho.jpg) no-repeat 0 0 / cover;
+    background: url(../images/Juho.jpg) no-repeat 0 0 / cover;
     margin-bottom: 10px;
 }
 .login_container > h1 {
@@ -52,19 +52,19 @@ body {
     left : -50px;
     top: -3px;
     width: 29px; height: 29px;
-    background: url(images/loading.svg) no-repeat -20px -19px;
+    background: url(../images/loading.svg) no-repeat -20px -19px;
     animation: loading 1s linear infinite; 
 }
 /* 배경 background */
 .background {
     width:100%;height:100vh;
-    background: url(images/background.png) 0 0 / cover;
+    background: url(../images/background.png) 0 0 / cover;
     filter: blur(7px);
     position: fixed;
 }
 .earth {
     width:640px;height:640px;
-    background: url(images/earth.png) 0 0 / cover;
+    background: url(../images/earth.png) 0 0 / cover;
     position: absolute;
     left:0; right:0;
     margin:0 auto;
@@ -82,7 +82,7 @@ body {
     left:0; right:50px;
     margin:0 auto;
     bottom:calc(0px + 320px);
-    background: url(images/Character.gif) no-repeat 0 0/cover;
+    background: url(../images/Character.gif) no-repeat 0 0/cover;
 }
 /* 메인 메뉴 main menu */
 .main_container {
@@ -112,17 +112,17 @@ body {
     margin-right:0; 
 }
 .main_container > .about > .img {
-    background: url(images/Juho.jpg) no-repeat 0 0 / cover;
+    background: url(../images/Juho.jpg) no-repeat 0 0 / cover;
     border-radius: 10px;
 }
 .main_container > .projects > .img{
-    background: url(images/folder.png) no-repeat 0 0 / cover;
+    background: url(../images/folder.png) no-repeat 0 0 / cover;
 }
 .main_container > .games > .img{
-    background: url(images/folder2.png) no-repeat 0 0 / cover;
+    background: url(../images/folder2.png) no-repeat 0 0 / cover;
 }
 .main_container > .github > .img{
-    background: url(images/github.png) no-repeat 0 0 / cover;
+    background: url(../images/github.png) no-repeat 0 0 / cover;
 }
 /* 폴더 folder*/
 .folder {
@@ -152,7 +152,7 @@ body {
 .folder > .folder_header {
     width: 100%;
     height:30px;
-    background: url(images/folderHeader.svg) no-repeat 0 0 / cover;
+    background: url(../images/folderHeader.svg) no-repeat 0 0 / cover;
     display: flex;
 }
 .folder > .folder_header > ul {
@@ -267,13 +267,13 @@ body {
 }
 .folder > .container > div > div > .title > .img > .img1{
     width : 200px;height: 32px;
-    background: url(images/maxican-header.png) no-repeat 0 0;
+    background: url(../images/maxican-header.png) no-repeat 0 0;
     position: absolute;
     z-index: 1;
     top : 0;
 }
 .folder > .container > div > div > .title > .img > .img2 {
-    background: url(images/maxican-without-header.png) no-repeat 0 0;
+    background: url(../images/maxican-without-header.png) no-repeat 0 0;
     position: absolute;
     width : 200px;height: 2600px;
     top: 32px; 
