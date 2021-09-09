@@ -213,7 +213,7 @@ body {
 .folder > .list > ul > li > ul > li {
     padding: 10px 0 10px 40px;
     cursor: pointer;
-    width: 100%;
+    width: 75%;
 }
 .folder > .list > ul > li > ul > li:hover {
     background-color: rgba(121,121,121,0.5);
@@ -284,11 +284,12 @@ body {
     animation: maxican 30s 1s linear infinite;
 
 }
-.folder > .container > div > div > .title > .web_btn {
+.folder > .container > div > div > .description > .web_btn {
     padding : 5px 10px;
     margin-top: 40px;
+    margin-bottom: 40px;
     width: 80px; height : 30px;
-    margin-left: 10px;
+    margin-left: 70%;
     line-height: 30px;
     background-color: black;
     color: white;
@@ -381,6 +382,9 @@ body {
 }
 .folder > .container > div > div > .description > .review > div {
     margin-bottom: 100px;
+}
+.folder > .container > div > div > .description > .review > div > p{
+    margin-left: 20px;
 }
 .project_container > .maxican_chicken {
     display: none;
