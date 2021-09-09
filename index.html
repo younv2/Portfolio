@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lnag="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/main.css">
+    <meta property="og:title" content="윤주호의 웹 포트폴리오" />
+    <meta property="og:description" content="윤주호의 웹 퍼블리싱 포트폴리오입니다." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nowonbun.tistory.com" />
+    <meta property="og:image" content="images/juho.jpg" />
+    <script src="jquery-3.6.0.min.js"></script>
+    <script defer src="script.js"></script>
+    <title>윤주호의 포트폴리오</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul id="gnb">
+                <li>Juho yun</li>
+                <li class="about"><a href="about/about.html">About</a></li>
+                <li class="projects">Projects</li>
+                <li class="games">Games</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="background"></div>
+        <section class="login_container">
+            <div class="img"></div>
+            <h1>Juho Yun</h1>
+            <button class="login_btn">로그인</button>
+            <p>잠시만 기다려 주세요.</p>
+        </section>
+        <div class="earth"></div>
+        <div class="char"></div>
+        <div class="main_container">
+            <div class="about">
+                <div class="img"></div>
+                <span>About</span>
+            </div>
+            <div class="projects">
+                <div class="img"></div>
+                <span>Projects</span>
+            </div>
+            <div class="games">
+                <div class="img"></div>
+                <span>Games</span>
+            </div>
+            <div class="github">
+                <div class="img"></div>
+                <span>Github</span>
+            </div>
+        </div>
+        <div class="folder">
+            <div class="folder_header">
+                <ul>
+                    <li class="close_btn"></li>
+                    <li class="close_btn"></li>
+                    <li class="maximize_btn"></li>
+                </ul>
+                <p class="title"></p>
+            </div>
+            <div class="list">
+                <ul class="project_list">
+                    <li class="rwd"><span>반응형</span>
+                        <ul>
+                            <li class="maxican_chicken">맥시칸치킨 리디자인</li>
+                        </ul>
+                    </li>
+                    <li class="awd"><span>적응형</span>
+                        <ul>
+                        </ul>
+                    </li>
+                    <li class="etc"><span>기타</span>
+                        <ul>
+                            <li>가자가자 앱 리디자인</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="game_list">
+                    <li>프룻프룻</li>
+                    <li>테트리스</li>
+                    <li>블록깨기</li>
+                </ul>
+            </div>
+            <section class="container">
+                <div class="project_container">
+                    <!-- 맥시칸치킨 리디자인 -->
+                    <div class="maxican_chicken">
+                        <div class="title">
+                            <h1>맥시칸치킨</h1>
+                            <h2>기준 사이즈</h2>
+                            <ul class="size">
+                                <li>pc : 1280px, 1920px</li>
+                                <li>tablet : 768px, 1024px</li>
+                                <li>mobile : 375px</li>
+                            </ul>
+                            <p>포트폴리오용 리디자인</p>
+                            <p>작업 기간 : 21.08</p>
+                            <p>#리디자인 #반응형 #mobileFirst #웹접근성 #웹표준</p>
+                            <div class="img">
+                                <div class="img1"></div>
+                                <div class="img2"></div>
+                            </div>
+                            <!-- target을 사용할때 Tabnabbing에 대응하기 위한 rel="noreferrer noopener" 작성-->
+                            <!-- Tabnabbing = 열린 새 페이지에서 window.opener.location을 변경하여, 기존 페이지를 피싱 페이지로 변경해 사용자 정보를 탈취하는것 -->
+                            <a href="http://maxicanchicken.netlify.app" target="_blank" rel="noreferrer noopener"
+                                class="web_btn">사이트 방문</a>
+                        </div>
+                        <div class="description">
+                            <section class="design">
+                                <h3>DESIGN</h3>
+                                <div>FONTS
+                                    <ul>
+                                        <li>한글 - Noto Sans KR</li>
+                                        <li>숫자, 영문 - Roboto</li>
+                                    </ul>
+                                    <p>가장 깔끔하고 주로 사용하는 폰트를 사용했습니다.</p>
+                                </div>
+                                <div>COLOR
+                                    <ul class="colors">
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                    <p>맥시칸치킨의 주 컬러인 빨간색과 초록색으로 텍스트와 Footer를 장식했으며, 서브로 잘 튀겨진 치킨과 같은 노란색을 사용했습니다</p>
+                                </div>
+                            </section>
+                            <section class="publishing">
+                                <h3>PUBLISHING</h3>
+                                <p>html과 css를 배우고 처음 작업한 홈페이지입니다. 레이아웃 수정 및 반응형 작업을 하였습니다.</p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="game_container">
+
+        </div>
+        </ㄴ>
+
+        </div>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

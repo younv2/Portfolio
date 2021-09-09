@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+body {background: black; color : white;}
+header {
+    display :block;
+}
+/* main */
+#main_wrapper > div > div{
+    width: 960px;
+    margin : 0 auto;
+}
+/* first_page */
+#main_wrapper > div > .first_page {
+    padding-top: 15vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#main_wrapper > div > .first_page > .img{
+    width: 40vh;
+    min-width: 310px;
+    max-width:406px;
+    height : 40vh;
+    min-height: 310px;
+    max-height:406px;
+    background: url(../images/Juho.jpg) no-repeat 0 0 / cover;
+    border-radius: 30px;
+    margin-right:145px;
+    margin-bottom:2vw;
+}
+#main_wrapper > div > .first_page > .about {
+    width: 371px;
+}
+#main_wrapper > div > .first_page > .about > h1 {
+    font-size: 37px;
+}
+#main_wrapper > div > .first_page > .about > h2 {
+    font-size: 28px;
+    font-weight: 500;
+}
+#main_wrapper > div > .first_page > .about > p:first-of-type {
+    font-size: 18px;
+    margin-bottom: 27px;
+}
+#main_wrapper > div > .first_page > .about > p:not(:first-of-type){
+    font-size: 16px;
+    word-break: keep-all;
+    margin-bottom: 18px;
+}
+#main_wrapper > div > .first_page > .advantage > h2{
+    font-size: 34px;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+#main_wrapper > div > .first_page > .advantage > ul{
+    display: flex;
+    font-size: 20px;
+}
+#main_wrapper > div > .first_page > .advantage > ul > li:first-child {
+    margin-left : 20px;
+}
+#main_wrapper > div > .first_page > .advantage > ul > li:not(:last-child) {
+    margin-right: 120px;
+}
+#main_wrapper > div > .first_page > .advantage > ul > li > .img {
+    height: 54px;
+    margin: 0 auto 27px;
+}
+#main_wrapper > div > .first_page > .advantage > ul > li > .communicative {
+    background: url("../images/communicative.svg") no-repeat;
+    width : 62px;
+}
+#main_wrapper > div > .first_page > .advantage > ul > li > .responsible {
+    background: url("../images/responsible.svg") no-repeat;
+    width : 31px;
+}
+#main_wrapper > div > .first_page > .advantage > ul > li > .passionate {
+    background: url("../images/passionate.svg") no-repeat;
+    width: 49px;
+    height: 60px;
+}
+#main_wrapper > div > .first_page > .advantage > ul > li > .work_hard {
+    background: url("../images/work-hard.svg") no-repeat;
+    width: 58px;
+}
+#main_wrapper > div > .first_page > .scroll {
+    position: fixed;
+    margin: 0 auto;
+    bottom : 60px;
+    font-size: 11px;
+    animation: scroll_ani 1s linear infinite;
+}
+#main_wrapper > div > .first_page > .scroll::after {
+    content: "";
+    background: url(../images/scroll.svg);
+    position: absolute;
+    width: 62px; height : 31px;
+    top:20px;
+    right:-10px;
+}
+/* second_page */
+#main_wrapper > div > .second_page {
+    position:relative;
+    padding-top: 15vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    letter-spacing: 0.40px;
+}
+#main_wrapper > div > .second_page > section > h2 {
+    font-size: 34px;
+    font-weight: 500;
+}
+#main_wrapper > div > .second_page > .history {
+    width:40%;
+    margin-bottom:2vw;
+    margin-left: 30px;
+}
+#main_wrapper > div > .second_page > .history >h2{
+    margin-bottom: 20px;
+}
+#main_wrapper > div > .second_page > .history > ul {
+    margin-left: 20px;
+    list-style: '- ';
+    line-height: 34px;
+}
+#main_wrapper > div > .second_page > .history > ul > li > p{
+    width: 330px;
+    word-break: keep-all;
+    margin-left: 10px;
+    line-height: 24px;
+}
+#main_wrapper > div > .second_page > .license {
+    width:40%;
+    margin-left: 10%;
+}
+#main_wrapper > div > .second_page > .license > h2{
+    margin-bottom:20px;
+}
+#main_wrapper > div > .second_page > .license > ul{
+    margin-left: 20px;
+    list-style: '- ';
+    line-height: 34px;
+}
+#main_wrapper > div > .second_page > .skill {
+    width:90%;
+}
+#main_wrapper > div > .second_page > .skill > h2{
+    margin-top: 5vw;
+    margin-bottom: 34px;
+}
+#main_wrapper > div > .second_page > .skill > ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+#main_wrapper > div > .second_page > .skill > ul > li{
+    width:calc(25% - 20px);
+    margin-bottom: 50px;
+    margin-left : 20px;
+}
+#main_wrapper > div > .second_page > .skill > ul > li > ul {
+    margin-top : 25px;
+    margin-left: 20px;
+    line-height: 34px;
+    list-style: '- ';
+}
+@keyframes scroll_ani {
+    100% {
+        transform: translateY(20px);
+    }
+}

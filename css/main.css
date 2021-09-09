@@ -1,0 +1,397 @@
+@charset "UTF-8";
+body {
+    height:100vh;
+    overflow: hidden;
+}
+/* main */
+/* 로그인 화면 */
+.login_container {
+    position: absolute;
+    left: 0; right: 0; top : calc(50% - 180px);
+    margin : auto auto;
+    z-index: 1;
+    color : white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login_container > .img {
+    width: 240px; height : 240px;
+    border-radius: 50%;
+    background: url(images/Juho.jpg) no-repeat 0 0 / cover;
+    margin-bottom: 10px;
+}
+.login_container > h1 {
+    font-size : 40px;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+.login_container > .login_btn {
+    width: 150px; height : 40px;
+    line-height: 40px;
+    background: rgba(255,255,255,0.4);
+    color:white;
+    text-align: center;
+    cursor: pointer;
+    border : none;
+}
+.login_container > .login_btn:active {
+    border : 1px solid;
+    background: rgba(255,255,255,0.2);
+}
+.login_container > p {
+    display: none;
+    position: relative;
+    margin-top:30px;
+    margin-left: 40px;
+    font-size: 20px;
+}
+.login_container > p::before {
+    content : '';
+    position: absolute;
+    left : -50px;
+    top: -3px;
+    width: 29px; height: 29px;
+    background: url(images/loading.svg) no-repeat -20px -19px;
+    animation: loading 1s linear infinite; 
+}
+/* 배경 background */
+.background {
+    width:100%;height:100vh;
+    background: url(images/background.png) 0 0 / cover;
+    filter: blur(7px);
+    position: fixed;
+}
+.earth {
+    width:640px;height:640px;
+    background: url(images/earth.png) 0 0 / cover;
+    position: absolute;
+    left:0; right:0;
+    margin:0 auto;
+    bottom:calc(0px - 320px);
+    filter: blur(7px);
+    overflow: hidden;
+}
+.earth.animation {
+    animation: earth 8s reverse linear infinite; 
+}
+.char {
+    display: none;
+    width:110px; height: 160px;
+    position: absolute;
+    left:0; right:50px;
+    margin:0 auto;
+    bottom:calc(0px + 320px);
+    background: url(images/Character.gif) no-repeat 0 0/cover;
+}
+/* 메인 메뉴 main menu */
+.main_container {
+    position: absolute;
+    width: 653px; height: 433px;
+    left:0;right:0;
+    margin:0 auto;
+    top:15vw;
+    color:white;
+    display: none;
+    flex-wrap: wrap;
+}
+.main_container > div{
+    font-size: 20px;
+    padding-top: 5px;
+    width: 110px; height : 125px;
+    position: relative;
+    margin-right:154px; 
+    text-align: center; 
+}
+.main_container > div > .img {
+    font-size: 20px;
+    width: 100px; height : 100px;
+    margin : 0 auto;
+}
+.main_container > div:nth-child(3n) {
+    margin-right:0; 
+}
+.main_container > .about > .img {
+    background: url(images/Juho.jpg) no-repeat 0 0 / cover;
+    border-radius: 10px;
+}
+.main_container > .projects > .img{
+    background: url(images/folder.png) no-repeat 0 0 / cover;
+}
+.main_container > .games > .img{
+    background: url(images/folder2.png) no-repeat 0 0 / cover;
+}
+.main_container > .github > .img{
+    background: url(images/github.png) no-repeat 0 0 / cover;
+}
+/* 폴더 folder*/
+.folder {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    width: 0;
+    height : 0;
+    overflow: hidden;
+    background-color: rgba(255,255,255,0.8);
+    left:0; right:0;
+    top:0; bottom:0;
+    border-radius: 20px;
+    margin:auto;
+    z-index: 1;
+    transition: 0.2s ease;
+}
+.on {
+    width: 70%;
+    min-width: 800px;
+    height : 80vh;
+}
+.max {
+    width:100%;
+    height:100vh;
+}
+.folder > .folder_header {
+    width: 100%;
+    height:30px;
+    background: url(images/folderHeader.svg) no-repeat 0 0 / cover;
+    display: flex;
+}
+.folder > .folder_header > ul {
+    display: flex;
+    align-items: center;
+    height:30px;
+}
+.folder > .folder_header > ul > li {
+    width : 20px;
+    height : 20px;
+    border: 1px solid;
+    border-radius: 50%;
+    margin-left : 15px;
+    cursor: pointer;
+}
+.folder > .folder_header > ul > li.close_btn {
+    background-color: red;
+}
+.folder > .folder_header > ul > li.close_btn:nth-child(2) {
+    background-color: orange;
+}
+.folder > .folder_header > ul > li.maximize_btn {
+    background-color: rgb(0,220,30);
+}
+.folder > .folder_header > .title {
+    color : black;
+    font-weight: 300;
+    font-size: 22px;
+    margin-left: calc(50% - 105px);
+}
+.folder > .list {
+    width: calc(20%);
+    height: calc(100% - 4px);
+    background-color: rgba(230, 230, 230, 0.9);
+    border-bottom-left-radius: 20px;
+    position : relative;
+}
+.folder > .list > ul {
+    width: 100%;
+}
+.folder > .list > ul > li {
+    width:100%;
+}
+.folder > .list > ul > li > span{
+    padding : 20px 0 10px 0;
+    width: 80%;
+    margin : 0 auto 15px;
+    display: block;
+    border-bottom: 1px solid #bbb;
+    color : #505050;
+}
+.folder > .list > ul > li:not(:first-child) > span {
+    margin-top: 20px;
+}
+.folder > .list > ul > li > ul {
+    display: block;
+}
+.folder > .list > ul > li > ul > li {
+    padding: 10px 0 10px 40px;
+    cursor: pointer;
+    width: 100%;
+}
+.folder > .list > ul > li > ul > li:hover {
+    background-color: rgba(121,121,121,0.5);
+}
+.folder > .list > .game_list {
+    display: none;
+}
+.folder > .container {
+    width:80%;
+    height: calc(100% - 30px);
+    background-color: rgba(255, 255, 255, 1);
+    border-bottom-right-radius: 20px;
+    position : relative;
+}
+.folder > .container > div{
+    overflow-y: auto;
+    height :100%;
+    -webkit-scrollbar : 2px;
+}
+.folder > .container > div::-webkit-scrollbar{
+    width: 10px;
+    
+}
+.folder > .container > div::-webkit-scrollbar-thumb{
+    background-color: rgba(0,0,255,1);
+    border-radius: 10px;
+}
+.folder > .container > div::-webkit-scrollbar-track{
+    background-color: rgba(0,0,100,0.5);
+}
+
+/* 상세 정보 영역 */
+.folder > .container > div > div > .title {
+    background-color: #fff6f1;
+    height: 320px;
+    padding :50px 0 0 80px;
+    position : relative;
+}
+.folder > .container > div > div > .title > h1 {
+    padding-top : 10px;
+    margin-bottom: 20px;
+}
+.folder > .container > div > div > .title > .img {
+    width : 200px;height: 433px;
+    border-radius: 20px;
+    border: 4px solid black;
+    position: absolute;
+    right : 100px;
+    top : calc(50% - 160px);
+    overflow: hidden;
+}
+.folder > .container > div > div > .title > .img > .img1{
+    width : 200px;height: 32px;
+    background: url(images/maxican-header.png) no-repeat 0 0;
+    position: absolute;
+    z-index: 1;
+    top : 0;
+}
+.folder > .container > div > div > .title > .img > .img2 {
+    background: url(images/maxican-without-header.png) no-repeat 0 0;
+    position: absolute;
+    width : 200px;height: 2600px;
+    top: 32px; 
+    animation: maxican 12s 1s linear infinite;
+
+}
+.folder > .container > div > div > .title > .web_btn {
+    padding : 5px 10px;
+    margin-top: 40px;
+    width: 80px; height : 30px;
+    line-height: 30px;
+    background-color: black;
+    color: white;
+}
+.folder > .container > div > div > .title > h2 {
+    font-weight: 400;
+    font-size: 20px;
+}
+.folder > .container > div > div > .title > ul {
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+.folder > .container > div > div > .title > p {
+    margin-bottom: 10px;
+}
+.folder > .container > div > div > .title > p:last-of-type {
+    color : rgb(0,120,255);
+}
+/* folder - container - description */
+.folder > .container > div > div > .description {
+    padding : 0 0 0 80px;
+}
+.folder > .container > div > div > .description > section > h3{
+    font-size : 24px;
+    font-weight: 400;
+    margin: 30px 0 20px;
+}
+.folder > .container > div > div > .description > section > div{
+    margin: 0 0 20px 10px;
+}
+.folder > .container > div > div > .description > section > div > p {
+    margin: 0 0 20px 10px;
+    word-break: keep-all;
+}
+.folder > .container > div > div > .description > section > div > ul {
+    margin: 20px 0 20px 10px;
+}
+/* folder - container - description - color */
+.folder > .container > div > div > .description > section > div > .colors {
+    display: flex;
+}
+.folder > .container > div > div > .description > section > div > .colors > li {
+    width : 60px; height : 80px;
+    position: relative;
+}
+.folder > .container > div > div > .description > section > div > .colors > li::after {
+    content : "";
+    position : absolute;
+    font-size : 12px;
+    left:0;right:0;
+    text-align: center;
+    margin : 0 auto;
+    bottom : -15px;
+}
+.folder > .container > div > div > .description > section > div > .colors > li:first-child {
+    background-color: #EB1C24;
+}
+.folder > .container > div > div > .description > section > div > .colors > li:first-child::after {
+    content: "#EB1C24";
+}
+.folder > .container > div > div > .description > section > div > .colors > li:nth-child(2) {
+    background-color: #50B13B;
+}
+.folder > .container > div > div > .description > section > div > .colors > li:nth-child(2)::after {
+    content: "#50B13B";
+}
+.folder > .container > div > div > .description > section > div > .colors > li:last-child {
+    background-color: #FFD325;
+}
+.folder > .container > div > div > .description > section > div > .colors > li:last-child::after {
+    content: "#FFD325";
+}
+.folder > .container > div > div > .description > section > p {
+    margin-left: 20px;
+    margin-bottom: 100px;
+}
+.project_container > .maxican_chicken {
+    display: none;
+}
+
+
+
+/* animation */
+@keyframes earth {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes loading {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes maxican {
+    0% {
+        transform: translate(0, 0);
+        transform: translateZ(-1);
+    }
+    30% {
+        transform: translate(0, -83%);
+    }
+    50% {
+        transform: translate(0, -83%);
+    }
+    80% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
