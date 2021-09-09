@@ -68,7 +68,7 @@ body {
     position: absolute;
     left:0; right:0;
     margin:0 auto;
-    bottom:calc(0px - 320px);
+    bottom:calc(0px - 420px);
     filter: blur(7px);
     overflow: hidden;
 }
@@ -81,7 +81,7 @@ body {
     position: absolute;
     left:0; right:50px;
     margin:0 auto;
-    bottom:calc(0px + 320px);
+    bottom:calc(0px + 220px);
     background: url(../images/Character.gif) no-repeat 0 0/cover;
 }
 /* 메인 메뉴 main menu */
@@ -281,7 +281,7 @@ body {
     max-width : 200px;height: 2600px;
     width : 20vw;
     top: 32px; 
-    animation: maxican 30s 1s linear infinite;
+    animation: maxican 36s 1s linear infinite;
 
 }
 .folder > .container > div > div > .description > .web_btn {
