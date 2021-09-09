@@ -75,7 +75,7 @@ $(document).ready(() => {
     });
     $(".main_container > .about").dblclick(function() {
         $(this).css("background-color","rgba(150,150,255,0.8)");
-        location.href="about/about.html";
+        location.href="about/index.html";
     });
     $(".main_container > .github").dblclick(function() {
         $(this).css("background-color","rgba(150,150,255,0.8)");

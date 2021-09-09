@@ -248,8 +248,9 @@ body {
 /* 상세 정보 영역 */
 .folder > .container > div > div > .title {
     background-color: #fff6f1;
-    height: 320px;
+    height: 360px;
     padding :50px 0 0 80px;
+    line-height: 1.5;
     position : relative;
 }
 .folder > .container > div > div > .title > h1 {
@@ -280,7 +281,7 @@ body {
     max-width : 200px;height: 2600px;
     width : 20vw;
     top: 32px; 
-    animation: maxican 24s 1s linear infinite;
+    animation: maxican 30s 1s linear infinite;
 
 }
 .folder > .container > div > div > .title > .web_btn {
@@ -300,6 +301,7 @@ body {
 .folder > .container > div > div > .title > p {
     max-width: 400px;
     width : 23vw;
+    
     word-break: keep-all;
     margin-bottom: 20px;
     margin-left: 10px;
@@ -310,6 +312,7 @@ body {
 /* folder - container - description */
 .folder > .container > div > div > .description {
     padding : 0 0 0 80px;
+    line-height: 1.5;
 }
 .folder > .container > div > div > .description > section > h3{
     font-size : 24px;
@@ -321,6 +324,7 @@ body {
 }
 .folder > .container > div > div > .description > section > div > p {
     margin: 0 0 20px 10px;
+    width: 80%;
     word-break: keep-all;
 }
 .folder > .container > div > div > .description > section > div > ul {
@@ -332,6 +336,7 @@ body {
 }
 .folder > .container > div > div > .description > section > div > .colors > li {
     width : 60px; height : 80px;
+    margin-left : 40px;
     position: relative;
 }
 .folder > .container > div > div > .description > section > div > .colors > li::after {
@@ -366,11 +371,16 @@ body {
 }
 .folder > .container > div > div > .description > section > p {
     margin-left: 20px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+    width: 80%;
 }
-.folder > .container > div > div > .description > .review > .reviews {
+.folder > .container > div > div > .description > .review > div > .reviews {
     margin-left : 10px;
     font-size: 20px;
+    font-weight: normal;
+}
+.folder > .container > div > div > .description > .review > div {
+    margin-bottom: 100px;
 }
 .project_container > .maxican_chicken {
     display: none;
