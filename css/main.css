@@ -301,42 +301,6 @@ body {
   top: calc(50% - 160px);
   overflow: hidden;
 }
-.folder > .container > div > .maxican_chicken > .title > .img > .img1 {
-  max-width: 200px;
-  height: 32px;
-  width: 20vw;
-  background: url(../images/maxican-header.png) no-repeat 0 0;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-}
-.folder > .container > div > .maxican_chicken > .title > .img > .img2 {
-  background: url(../images/maxican-without-header.png) no-repeat 0 0;
-  position: absolute;
-  max-width: 200px;
-  height: 2600px;
-  width: 20vw;
-  top: 32px;
-  animation: maxican 36s 1s linear infinite;
-}
-.folder > .container > div > .bluecom > .title > .img > .img1 {
-  max-width: 200px;
-  height: 32px;
-  width: 20vw;
-  background: url(../images/bluecom-header.png) no-repeat 0 0;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-}
-.folder > .container > div > .bluecom > .title > .img > .img2 {
-  background: url(../images/bluecom-main.png) no-repeat 0 0;
-  position: absolute;
-  max-width: 200px;
-  height: 5800px;
-  width: 20vw;
-  top: 32px;
-  animation: maxican 60s 1s linear infinite;
-}
 .folder > .container > div > div > .description > .web_btn {
   padding: 5px 10px;
   margin-top: 40px;
@@ -395,15 +359,7 @@ body {
   margin-left: 40px;
   position: relative;
 }
-.folder
-  > .container
-  > div
-  > div
-  > .description
-  > section
-  > div
-  > .colors
-  > li::after {
+.folder > .container > div  > div  > .description  > section  > div  > .colors  > li::after {
   content: "";
   position: absolute;
   font-size: 12px;
@@ -413,70 +369,23 @@ body {
   margin: 0 auto;
   bottom: -15px;
 }
-.folder
-  > .container
-  > div
-  > div
-  > .description
-  > section
-  > div
-  > .colors
+.folder  > .container  > div  > div  > .description  > section  > div  > .colors
   > li:first-child {
   background-color: #eb1c24;
 }
-.folder
-  > .container
-  > div
-  > div
-  > .description
-  > section
-  > div
-  > .colors
-  > li:first-child::after {
+.folder > .container > div > div > .description > section > div > .colors > li:first-child::after {
   content: "#EB1C24";
 }
-.folder
-  > .container
-  > div
-  > div
-  > .description
-  > section
-  > div
-  > .colors
-  > li:nth-child(2) {
+.folder > .container > div > div > .description > section > div > .colors > li:nth-child(2) {
   background-color: #50b13b;
 }
-.folder
-  > .container
-  > div
-  > div
-  > .description
-  > section
-  > div
-  > .colors
-  > li:nth-child(2)::after {
+.folder > .container > div > div > .description > section > div > .colors > li:nth-child(2)::after {
   content: "#50B13B";
 }
-.folder
-  > .container
-  > div
-  > div
-  > .description
-  > section
-  > div
-  > .colors
-  > li:last-child {
+.folder > .container > div > div > .description > section > div > .colors > li:last-child {
   background-color: #ffd325;
 }
-.folder
-  > .container
-  > div
-  > div
-  > .description
-  > section
-  > div
-  > .colors
-  > li:last-child::after {
+.folder > .container > div > div > .description > section > div > .colors > li:last-child::after {
   content: "#FFD325";
 }
 .folder > .container > div > div > .description > section > div > p {
@@ -498,8 +407,74 @@ body {
 .folder > .container > div > div > .description > .review > div > p {
   margin-left: 20px;
 }
+/* 개인 프로젝트 별 css */
 .project_container > .maxican_chicken {
   display: none;
+}
+.folder > .container > div > .maxican_chicken > .title > .img > .img1 {
+    max-width: 200px;
+    height: 32px;
+    width: 20vw;
+    background: url(../images/maxican-header.png) no-repeat 0 0;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+  }
+  .folder > .container > div > .maxican_chicken > .title > .img > .img2 {
+    background: url(../images/maxican-without-header.png) no-repeat 0 0;
+    position: absolute;
+    max-width: 200px;
+    height: 2600px;
+    width: 20vw;
+    top: 32px;
+    animation: maxican 36s 1s linear infinite;
+  }
+  .folder > .container > div > .bluecom > .title > .img > .img1 {
+    max-width: 200px;
+    height: 32px;
+    width: 20vw;
+    background: url(../images/bluecom-header.png) no-repeat 0 0;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+  }
+  .folder > .container > div > .bluecom > .title > .img > .img2 {
+    background: url(../images/bluecom-main.png) no-repeat 0 0;
+    position: absolute;
+    max-width: 200px;
+    height: 5800px;
+    width: 20vw;
+    top: 32px;
+    animation: maxican 60s 1s linear infinite;
+  }
+  .folder > .container > div > .ui_design_team_project > .title > p:first-of-type {
+    color: black;
+  }
+  .folder > .container > div > .ui_design_team_project > .description > section > p{
+      margin : 0;    
+  }
+  .folder > .container > div > .ui_design_team_project > .description > .responsibility > ul > li {
+      margin-left : 10px;
+      margin-bottom: 10px;
+  }
+  .folder > .container > div > .ui_design_team_project > .description > .responsibility > h4 {
+    margin-bottom : 10px;
+}
+  .folder > .container > div > .ui_design_team_project > .description > .responsibility > p {
+      margin-bottom : 10px;
+      margin-left: 10px;
+  }
+  .folder > .container > div > .ui_design_team_project > .description > .review > ul > li {
+    margin-left : 10px;
+    margin-bottom: 10px;
+}
+.folder > .container > div > .ui_design_team_project > .description > .bad > p {
+    margin-bottom : 10px;
+    margin-left: 10px;
+}
+.folder > .container > div > .ui_design_team_project > .description > .good > p {
+    margin-bottom : 10px;
+    margin-left: 10px;
 }
 
 /* animation */
