@@ -19,6 +19,9 @@ let state = {
             $(".folder > .list > .game_list").css("display","none");
             $(".folder > .list > .project_list").css("display","block");
             $(".folder > .container > .project_container").css("display","block");
+            $(".project_container").children().css("display","none");
+            $(".project_container").children().eq(0).css("display","block");
+            $(".project_list > li > ul").children().eq(0).css("font-weight","bold").css("color","#7070f0");
             $(".folder > .container > .game_container").css("display","none");
         }
         else if(this._state=="games") {
@@ -100,7 +103,8 @@ $(document).ready(() => {
     });
     $(".project_list > li > ul").children().click(function() {
         let class_name = $(this).attr("class");
-        console.log(class_name);
+        $(".project_list > li > ul").children().css("font-weight","normal").css("color","black");
+        $(this).css("font-weight","bold").css("color","#7070f0");
         $(".project_container").children().css("display","none");
         $(".project_container").children("." + class_name).css("display","block");
     });
