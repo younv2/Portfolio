@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>블록깨기</title>
+</head>
+<canvas id="myCanvas" width="1280" height="768" style="background-color:beige"></canvas>
+
+<body>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+
+        Math.radians = function (degree) {
+            return degree * Math.PI / 180;
+        }
+        let ball = {
+            x: canvas.width / 2,
+            y: canvas.height - 50,
+            angle: 35,
+            speed: 7,
+            radius: 5
+        };
+        let paddle = {
+            height: 30,
+            width: 400
+        };
+        let paddleStartX = (canvas.width - paddle.width) / 2;
+        let paddleCenter = paddle.width / 2;
+
+        //벽돌 기본 값
+        let brickRowCount = 4; //벽돌 행
+        let brickColumnCount = 8;  // 벽돌 열
+        let brickWidth = 1000 / brickColumnCount;// 벽돌 
+        let brickHeight = 20;// 벽돌 높이
+        let brickPadding = 1;// 벽돌끼리의 마진값
+        let brickOffsetTop = 300;
+        let brickOffsetLeft = 200 / 2;
+
+        let score = 0;
+
+        let rightPressed = false;//우측 키 클릭
+        let leftPressed = false;//좌측 키 클릭
+
+        let hit = false;
+
+        let bricks = [];
+        for (let c = 0; c < brickColumnCount; c++) {
+            bricks[c] = [];
+            for (let r = 0; r < brickRowCount; r++) {
+                bricks[c][r] = { x: 0, y: 0, status: 1 };//블럭 생성
+            }
+        }
+        function Init() {//전체 초기화
+            score = 0;
+            ball.x = canvas.width / 2;
+            ball.y = canvas.height - 30;
+            for (let c = 0; c < brickColumnCount; c++) {
+                bricks[c] = [];
+                for (let r = 0; r < brickRowCount; r++) {
+                    bricks[c][r] = { x: 0, y: 0, status: 1 };
+                }
+            }
+            hit = false;
+        }
+        //벽돌 위치에 그려주는 함수
+        function DrawBricks() {
+            for (let c = 0; c < brickColumnCount; c++) {
+                for (let r = 0; r < brickRowCount; r++) {
+                    if (bricks[c][r].status == 1) {//상태가 1일경우 블럭을 그림
+                        let brickX = (c * (brickWidth + brickPadding)) + brickOffsetLeft;
+                        let brickY = (r * (brickHeight + brickPadding)) + brickOffsetTop;
+                        bricks[c][r].x = brickX;
+                        bricks[c][r].y = brickY;
+                        ctx.beginPath();
+                        ctx.rect(brickX, brickY, brickWidth, brickHeight);
+                        ctx.fillStyle = "#700f0f";
+                        ctx.fill();
+                        ctx.closePath();
+                    }
+                }
+            }
+        }
+        //addEventListener(eventName, listener[, useCapture]) = eventName : click, load, keydown 등 / listener : 이벤트 리스너로 등록할 함수 이름 / 
+        //useCapture : default 값은 fault 생략가능 
+        document.addEventListener("keydown", keyDownHandler, false);
+        document.addEventListener("keyup", keyUpHandler, false);
+
+        function keyDownHandler(e) {
+            if (e.keyCode == 39) {
+                rightPressed = true;
+            }
+            else if (e.keyCode == 37) {
+                leftPressed = true;
+            }
+        }
+        function keyUpHandler(e) {
+            if (e.keyCode == 39) {
+                rightPressed = false;
+            }
+            else if (e.keyCode == 37) {
+                leftPressed = false;
+            }
+        }
+
+        //공 그려주는 함수
+        function DrawBall() {
+            ctx.beginPath();
+            ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+            ctx.fillStyle = "#FF95FF";
+            ctx.fill();
+            ctx.closePath();
+        }
+        //패달 그려주는 함수
+        function DrawPaddle() {
+            ctx.beginPath();
+            ctx.rect(paddleStartX, canvas.height - paddle.height, paddle.width, paddle.height);
+            ctx.fillStyle = "#0000CC";
+            ctx.fill();
+            ctx.closePath()
+        }
+        //충돌감지 함수
+        function CollisionDetection() {
+            for (let c = 0; c < brickColumnCount; c++) {
+                for (let r = 0; r < brickRowCount; r++) {
+                    let b = bricks[c][r];
+                    // 블록을 쳤을경우
+                    if (b.status == 1) {
+                        if (ball.x + ball.radius > b.x && ball.x - ball.radius < b.x + brickWidth && ball.y + ball.radius > b.y - brickHeight && ball.y - ball.radius < b.y + brickHeight) {
+                            //중복으로 칠경우 같은 방향으로 가는 것을 방지
+                            if (((ball.x + ball.radius > b.x && ball.x + ball.radius < b.x + ball.speed) || (ball.x - ball.radius < b.x + brickWidth && ball.x - ball.radius > b.x + brickWidth - ball.speed)) && !hit) {
+                                ball.angle = 180 + ball.angle;
+                                if (ball.angle > 360) {
+                                    ball.angle -= 360;
+                                }
+                                hit = true;
+                            }
+                            else if (!hit) {
+                                ball.angle = 360 - ball.angle;
+                                if (ball.angle > 360) {
+                                    ball.angle -= 360;
+                                  }
+                                hit = true;
+                            }
+                            b.status = 0;
+                            score++;
+                        }
+                    }
+                }
+            }
+            // 벽을 쳤을경우
+            if (ball.x + ball.speed > canvas.width - ball.radius || ball.x + ball.speed < ball.radius) {
+                ball.angle = 180 - ball.angle;
+            }
+            if (ball.y - ball.radius - ball.speed < 0) {
+                    ball.angle = 360 - ball.angle;
+                    if (ball.angle > 360) {
+                    ball.angle -= 360;
+                }
+            }
+            //패들을 쳤을 경우
+            if (ball.x > paddleStartX && ball.x < paddleStartX + paddle.width && ball.y + ball.radius > canvas.height - paddle.height && ball.y - ball.radius < canvas.height) {
+                console.log("paddle");
+                if(ball.x <paddleStartX + paddleCenter &&!hit)
+                {
+                    ball.angle = 360 - ball.angle - ((paddleStartX + paddleCenter) - ball.x) / 50;
+                    if (ball.angle > 360) {
+                    ball.angle -= 360;
+                    }
+                    hit = true;
+                }
+                else if(!hit){
+                    ball.angle = 360 - ball.angle + ((paddleStartX + paddleCenter) - ball.x) / 50;
+                    if (ball.angle > 360) {
+                    ball.angle -= 360;
+                    }
+                    hit = true;
+                }
+                
+            }
+            else if (ball.y + ball.radius > canvas.height) {
+                alert("Game Over");
+                Init();
+                document.location.reload();
+            }
+        }
+        //화면에 그려주는 함수
+        function Draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);//매번 캔버스를 지워줌
+            console.log(ball.angle);
+            DrawBall();
+            DrawPaddle();
+            DrawBricks();
+
+
+
+            if (rightPressed && paddleStartX < canvas.width - paddle.width) {//우측 키 누를 경우
+                paddleStartX += 6;
+            }
+            else if (leftPressed && paddleStartX > 0) {//좌측키를 누를경우
+                paddleStartX -= 6;
+            }
+
+            ball.x += ball.speed * Math.cos(Math.radians(ball.angle));
+            ball.y += ball.speed * Math.sin(Math.radians(ball.angle));
+
+            
+            if (score == brickRowCount * brickColumnCount) {
+                alert("Clear");
+                Init();
+                document.location.reload();
+            }
+            CollisionDetection();
+            ctx.font = "italic 20px fonte";
+            ctx.fillText("score : " + score, 20, 20);
+        }
+        function HitCheck() {
+            hit = false;
+        }
+        setInterval(Draw, 10);
+        setInterval(HitCheck,200);
+    </script>
+</body>

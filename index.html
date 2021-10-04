@@ -88,7 +88,7 @@
                     </li>
                 </ul>
                 <ul class="game_list">
-                    <li><span>미완성</span>
+                    <li><span>게임</span>
                         <ul>
                             <li class="block_break">블록깨기</li>
                         </ul>
@@ -218,10 +218,6 @@
                             <p>모바일 앱 '가자가자' UIUX Redesign</p>
                             <p>앱 소개 : 캠핑을 다니는 사용자들을 위한 캠핑 장소 소개</p>
                             <p>제작 기간 : 2021/06 - 2021/08</p>
-                            <div class="img">
-                                <video class="vid1" src="resources/prototype.mp4" muted autoplay></video>
-                                <div class="img2"></div>
-                            </div>
                         </div>
                         <div class="description">
                             <section class="project_timeline">
@@ -274,13 +270,44 @@
                                 <a href="https://xd.adobe.com/view/a9a19404-6aef-400e-a2d7-381256720e5c-fcf2/screen/70a53dcf-fb41-4bf9-be89-3db78fe6572f?fullscreen" target="_blank" rel="noreferrer noopener"
                                 class="prototype_btn btn">프로토타입</a>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
                 <div class="game_container">
                     <div class="block_break">
+                        <div class="title">
+                            <h1>블록깨기</h1>
+                            <p>#JavaScript #pc</p>
+                            <p>pc - 1920px</p>
+                            <p>JavaScript를 공부하기 위해 제작한 블록깨기 게임입니다. pc 1920px에 최적화되어 있습니다.</p>
                         </div>
+                        <div class="description">
+                            <section class="review">
+                                <h3>문제 및 해결</h3>
+                                <div>
+                                    <h3 class="reviews">· 첫 자바스크립트 제작</h3>
+                                    <p>자바스크립트 캔버스를 이용한 첫 작업물입니다.</p>
+
+                                    <p> 캔버스를 어떤 식으로 이용하는지 알 수 있었고, 여러 문제를 겪으며 어떠한 점을 신경을 써 줘야 하는지 배울 수 있었습니다. 다음 제작물에서는
+                                        문제를 겪은 부분에 대해서 더욱 고려를 하여 제작을 할 수 있게 되었습니다.</p>
+                                </div>
+                                <div>
+                                    <h3 class="reviews">· 삼각함수를 이용한 공의 각도 설정</h3>
+                                    <p> 처음 제작하였을 때는 y값에 의해 부딪힐 경우 -1을 곱해줘 방향을 전환 하였습니다. 하지만 이 방식의 경우 각도를 크게 변경을 주기가 어려워 cos과 sin을 이용해 각도를 조절하기로 하였습니다.</p>
+                                        <p> 그래서 cos과 sin에 현재 각을 넣어 각도를 조절하였으나, 아직 완전한 이해를 하지는 못하였습니다. 이에 부족한 부분이 있어, 추후엔 더 공부하여 실력을 증진시키도록 하겠습니다.</p>
+                                </div>
+                                <div>
+                                    <h3 class="reviews">· 벽돌 충돌 문제</h3>
+                                    <p>벽돌이 두개 이상 충돌할 경우, 각도가 두번 돌게 되어 벽돌을 뚫게 되는 버그가 있었습니다.</p>
+                                    <p> 이에 boolean 변수를 하나 선언하여 벽돌 하나에 충돌할 경우 다른 벽돌에 충돌 판정이 나더라도 각도는 변환시키지 않도록 하였습니다. 그리고 벽이나 플레이어의 패들에 부딪힐 경우 boolean값은 false가 되어 벽돌에 부딪히면 각도가 변경되도록 하였습니다.</p>
+                                </div>
+                            </section>
+
+                            <!-- target을 사용할때 Tabnabbing에 대응하기 위한 rel="noreferrer noopener" 작성-->
+                            <!-- Tabnabbing = 열린 새 페이지에서 window.opener.location을 변경하여, 기존 페이지를 피싱 페이지로 변경해 사용자 정보를 탈취하는것 -->
+                            <a href="/games/block.html" target="_blank" rel="noreferrer noopener"
+                                class="web_btn btn">사이트 방문</a>
+                    </div>
                 </div>
         
         </div>
