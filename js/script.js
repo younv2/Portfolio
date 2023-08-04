@@ -103,6 +103,7 @@ $(document).ready(() => {
     });
     $(".project_list > li > ul").children().click(function() {
         let class_name = $(this).attr("class");
+        console.log(class_name);
         $(".project_list > li > ul").children().css("font-weight","normal").css("color","black");
         $(this).css("font-weight","bold").css("color","#7070f0");
         $(".project_container").children().css("display","none");
